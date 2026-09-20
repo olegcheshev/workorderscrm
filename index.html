@@ -42,9 +42,14 @@
     fbq('init', '1832571548106693');
     fbq('track', 'PageView');
   </script>
+
   <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1832571548106693&ev=PageView&noscript=1">
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1832571548106693&ev=PageView&noscript=1"
+    >
   </noscript>
   <!-- End Meta Pixel Code -->
 
@@ -186,146 +191,98 @@
       <div class="grid">
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/qd9DInGNYUBv0QtWFxtsT7gJkE.png?height=2340&width=1080"
               alt="Today"
             >
           </div>
-
           <h3>Today</h3>
-
-          <p>
-            See today’s jobs and what needs your attention.
-          </p>
-
+          <p>See today’s jobs and what needs your attention.</p>
         </article>
 
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/ADjIYOO7mYXJQtDscpBXR9ZWnak.png?height=2340&width=1080"
               alt="Orders"
             >
           </div>
-
           <h3>Orders</h3>
-
-          <p>
-            Keep every job organized from booking to payment.
-          </p>
-
+          <p>Keep every job organized from booking to payment.</p>
         </article>
 
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/U5erFqchs5apL3lvyuccZ1jVUM.png?height=2340&width=1080"
               alt="Calendar"
             >
           </div>
-
           <h3>Calendar</h3>
-
-          <p>
-            Plan your work and see your schedule at a glance.
-          </p>
-
+          <p>Plan your work and see your schedule at a glance.</p>
         </article>
 
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/kQJ8jtBnOuMiO95DjbU2zEwNseU.png?height=2340&width=1080"
               alt="Clients"
             >
           </div>
-
           <h3>Clients</h3>
-
-          <p>
-            Keep customer details, addresses and job history together.
-          </p>
-
+          <p>Keep customer details, addresses and job history together.</p>
         </article>
 
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/8mpgnXJvXI1ILnUtMQtiGI0oiM.png?height=2340&width=1080"
               alt="Invoices"
             >
           </div>
-
           <h3>Invoices</h3>
-
-          <p>
-            Create professional PDF invoices directly from your phone.
-          </p>
-
+          <p>Create professional PDF invoices directly from your phone.</p>
         </article>
 
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/x715dh2CsWVI0yVBEl1kouSMv3M.png?height=2340&width=1080"
               alt="Money"
             >
           </div>
-
           <h3>Money</h3>
-
-          <p>
-            See what has been paid and what is still outstanding.
-          </p>
-
+          <p>See what has been paid and what is still outstanding.</p>
         </article>
 
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/jWWKUc0UXnRxKMe3g5rncYUIao.png?height=2340&width=1080"
               alt="Analytics"
             >
           </div>
-
           <h3>Analytics</h3>
-
-          <p>
-            Understand your income and business activity.
-          </p>
-
+          <p>Understand your income and business activity.</p>
         </article>
 
 
         <article class="card">
-
           <div class="imagebox">
             <img
               src="https://framerusercontent.com/images/VTmEQg9eiixEfbmgs8NpRVBaEQ.png?height=2340&width=1080"
               alt="Data backup and restore"
             >
           </div>
-
           <h3>Data</h3>
-
-          <p>
-            Keep control of your business data with backup and export tools.
-          </p>
-
+          <p>Keep control of your business data with backup and export tools.</p>
         </article>
 
       </div>
@@ -445,6 +402,27 @@
               : 'play_store_click';
 
           gtag('event', eventName, {
+
+            store: link.dataset.store,
+
+            utm_source:
+              params.get('utm_source') || '',
+
+            utm_medium:
+              params.get('utm_medium') || '',
+
+            utm_campaign:
+              params.get('utm_campaign') || ''
+
+          });
+
+
+          var metaEventName =
+            link.dataset.store === 'app_store'
+              ? 'AppStoreClick'
+              : 'GooglePlayClick';
+
+          fbq('trackCustom', metaEventName, {
 
             store: link.dataset.store,
 
